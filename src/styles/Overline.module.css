@@ -1,0 +1,104 @@
+.overline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  background-color: #060714;
+  color: #fff;
+}
+
+/* New container to align text & images side by side */
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+/* Left Side: Text */
+.textContainer {
+  max-width: 500px;
+  padding-top: 100px;
+  padding-left: 100px;
+}
+
+.overlineText {
+  color: #7780a1;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  color: #7780a1;
+  font-size: 14px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.primaryButton {
+  background:linear-gradient(to right, #4745d0, #2a27c9);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: #7780A1;
+  padding: 10px 20px;
+  border: 1px solid #4a49ff;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+/* Right Side: Images */
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 20px; */
+  position: relative;
+  margin-top: 300px;
+}
+
+.mainImage {
+  width: 150px;
+  position: absolute;
+  top: -150px; /* Moves up */
+  right: 300px;
+}
+
+.subImage {
+  width: 200px;
+  position: absolute;
+  top: -220px; /* Moves higher */
+  right: 150px;
+  transform: rotate(5deg);
+}
+
+/* Bottom Section: Cards */
+.bottomImageContainer {
+  display: flex;
+  justify-content: space-between; /* Adjust spacing */
+  align-items: center;
+  gap: 20px; /* Adds space between images */
+  margin-top: 50px; /* Adjust based on layout */
+}
+
+.bottomImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Rounded corners */
+}

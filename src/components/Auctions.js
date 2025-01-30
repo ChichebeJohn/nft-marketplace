@@ -2,7 +2,9 @@
 import React, { useRef, useState } from "react";
 import NFTCard from "./NFTCards";
 import styles from "../styles/Auctions.module.css";
-import Swiper from "swiper";
+// Optionally use Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Add Swiper CSS import
 
 const nftData = [
   {
@@ -36,8 +38,6 @@ const nftData = [
     price: "2.5",
     timeLeft: "2:41 min",
     bidders: "24",
-    
-    
   },
   {
     id: 5,
@@ -77,7 +77,22 @@ const Auctions = () => {
   return (
     <section className={styles.auctions}>
       <h2 className={styles.title}>Latest Live Auctions</h2>
-      <div
+      {/* Uncomment Swiper below if you want carousel functionality */}
+      <Swiper
+        spaceBetween={0}
+        slidesPerView={4.5}
+        loop={true}
+        // You can add other Swiper options here
+      >
+        {nftData.map((nft) => (
+          <SwiperSlide key={nft.id}>
+            <NFTCard nft={nft} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Uncomment this section for custom mouse dragging scroll */}
+      {/* <div
         className={styles.grid}
         ref={scrollRef}
         onMouseDown={handleMouseDown}
@@ -88,7 +103,7 @@ const Auctions = () => {
         {nftData.map((nft) => (
           <NFTCard key={nft.id} nft={nft} />
         ))}
-      </div>
+      </div> */}
     </section>
   );
 };
